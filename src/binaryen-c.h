@@ -2773,6 +2773,9 @@ BINARYEN_API void BinaryenAddMemoryImport(BinaryenModuleRef module,
                                           const char* externalModuleName,
                                           const char* externalBaseName,
                                           uint8_t shared);
+BINARYEN_API void BinaryenMemorySetMax(BinaryenModuleRef module,
+                                       const char* internalName,
+                                       uint64_t max);
 BINARYEN_API void BinaryenAddGlobalImport(BinaryenModuleRef module,
                                           const char* internalName,
                                           const char* externalModuleName,

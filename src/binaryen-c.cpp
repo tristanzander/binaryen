@@ -5099,6 +5099,13 @@ void BinaryenAddMemoryImport(BinaryenModuleRef module,
     memory->base = externalBaseName;
   }
 }
+void BinaryenMemorySetMax(BinaryenModuleRef module, const char* internalName, uint64_t max) {
+  auto* memory = ((Module*)module)->getMemory(internalName);
+  if (memory == nullptr) {
+    Fatal() << "no memory found '" << internalName << "'";
+  }
+  memory->max = max;
+}
 void BinaryenAddGlobalImport(BinaryenModuleRef module,
                              const char* internalName,
                              const char* externalModuleName,
